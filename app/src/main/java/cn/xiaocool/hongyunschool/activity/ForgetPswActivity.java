@@ -26,6 +26,9 @@ import cn.xiaocool.hongyunschool.utils.BaseActivity;
 import cn.xiaocool.hongyunschool.utils.JsonResult;
 import cn.xiaocool.hongyunschool.utils.ProgressUtil;
 import cn.xiaocool.hongyunschool.utils.ToastUtil;
+/**
+ * 登录界面 忘记密码
+ */
 
 public class ForgetPswActivity extends BaseActivity {
     @BindView(R.id.activity_forget_psw_ed_phone)

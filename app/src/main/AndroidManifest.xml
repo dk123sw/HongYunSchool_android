@@ -132,38 +132,38 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.SchoolNewsActivity" />
-        <activity android:name=".activity.ClassNewsActivity" />
-        <activity android:name=".activity.SchoolAnnounceActivity" />
-        <activity android:name=".activity.MessageActivity" />
+        <activity android:name=".activity.infromation.SchoolNewsActivity" />
+        <activity android:name=".activity.infromation.ClassNewsActivity" />
+        <activity android:name=".activity.infromation.SchoolAnnounceActivity" />
+        <activity android:name=".activity.infromation.MessageActivity" />
         <activity android:name=".activity.ImageDetailActivity" />
-        <activity android:name=".activity.SettingActivity" >
+        <activity android:name=".activity.myself.SettingActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.AddressActivity" />
-        <activity android:name=".activity.MyIntegrationActivity" />
+        <activity android:name=".activity.myself.AddressActivity" />
+        <activity android:name=".activity.myself.MyIntegrationActivity" />
         <activity android:name=".activity.SystemNewsActivity" />
-        <activity android:name=".activity.AddSchoolNewsActivity" />
-        <activity android:name=".activity.ChooseReciverActivity" />
-        <activity android:name=".activity.WebListActivity" />
-        <activity android:name=".activity.FivePublicActivity" />
-        <activity android:name=".activity.FivePublicDetailActivity" />
-        <activity android:name=".activity.WebKeChengActivity" />
-        <activity android:name=".activity.ParentMessageActivity" />
-        <activity android:name=".activity.AddParentMessageActivity" />
-        <activity android:name=".activity.AddMessageActivity" />
+        <activity android:name=".activity.infromation.AddSchoolNewsActivity" />
+        <activity android:name=".activity.infromation.ChooseReciverActivity" />
+        <activity android:name=".activity.schoolnet.zhuanlan.WebListActivity" />
+        <activity android:name=".activity.schoolnet.zhuanlan.FivePublicActivity" />
+        <activity android:name=".activity.schoolnet.zhuanlan.FivePublicDetailActivity" />
+        <activity android:name=".activity.schoolnet.zhuanlan.WebKeChengActivity" />
+        <activity android:name=".activity.infromation.ParentMessageActivity" />
+        <activity android:name=".activity.infromation.AddParentMessageActivity" />
+        <activity android:name=".activity.infromation.AddMessageActivity" />
         <activity android:name=".activity.TestLayoutActivity" />
-        <activity android:name=".activity.PersonalInfoActivity" />
-        <activity android:name=".activity.ChangePswActivity" />
+        <activity android:name=".activity.myself.PersonalInfoActivity" />
+        <activity android:name=".activity.myself.ChangePswActivity" />
         <activity android:name=".activity.LoginActivity" />
         <activity android:name=".activity.ForgetPswActivity" />
-        <activity android:name=".activity.AddClassNewsActivity" />
-        <activity android:name=".activity.AddSchoolAnnounceActivity" />
-        <activity android:name=".activity.PostTrendActivity" />
-        <activity android:name=".activity.ReadListSchoolAnnonceActivity" />
+        <activity android:name=".activity.infromation.AddClassNewsActivity" />
+        <activity android:name=".activity.infromation.AddSchoolAnnounceActivity" />
+        <activity android:name=".activity.trend.PostTrendActivity" />
+        <activity android:name=".activity.infromation.ReadListSchoolAnnonceActivity" />
         <activity android:name=".activity.SplashActivity" />
         <activity android:name=".activity.FullActivity">
             <intent-filter>
@@ -172,22 +172,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.ChooseClassActivity" />
-        <activity android:name=".activity.ChooseTeacherActivity" />
-        <activity android:name=".activity.ReadListClassNewLeaderActivity" />
-        <activity android:name=".activity.ReadListClassNewTeacherActivity" />
-        <activity android:name=".activity.SchoolWebDetailActivity" />
+        <activity android:name=".activity.infromation.ChooseClassActivity" />
+        <activity android:name=".activity.infromation.ChooseTeacherActivity" />
+        <activity android:name=".activity.infromation.ReadListClassNewLeaderActivity" />
+        <activity android:name=".activity.infromation.ReadListClassNewTeacherActivity" />
+        <activity android:name=".activity.schoolnet.zhuanlan.SchoolWebDetailActivity" />
         <activity android:name=".activity.SystemNewsDetailActivity" />
-        <activity android:name=".activity.QRCodeActivity" />
+        <activity android:name=".activity.myself.QRCodeActivity" />
 
         <service android:name=".view.update.UpdateService" />
 
-        <activity android:name=".activity.WebOtherListActivity" />
-        <activity android:name=".activity.FivePublicWebDetailActivity" />
-        <activity android:name=".activity.AddGroupMessageActivity" />
-        <activity android:name=".activity.ChooseParentActivity" />
-        <activity android:name=".activity.OnlineCommentActivity" />
-        <activity android:name=".activity.FeedbackActivity" />
+        <activity android:name=".activity.schoolnet.zhuanlan.WebOtherListActivity" />
+        <activity android:name=".activity.schoolnet.zhuanlan.FivePublicWebDetailActivity" />
+        <activity android:name=".activity.infromation.AddGroupMessageActivity" />
+        <activity android:name=".activity.infromation.ChooseParentActivity" />
+        <activity android:name=".activity.myself.OnlineCommentActivity" />
+        <activity android:name=".activity.myself.FeedbackActivity" />
         <activity android:name=".activity.PayActivity" />
         <activity android:name=".activity.ServiceBuyActivity"></activity>
 

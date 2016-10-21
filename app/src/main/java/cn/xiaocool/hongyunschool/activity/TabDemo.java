@@ -12,7 +12,9 @@ import com.lzy.widget.tab.PagerSlidingTabStrip;
 import java.util.ArrayList;
 
 import cn.xiaocool.hongyunschool.R;
-
+/**
+ * 未使用
+ */
 public class TabDemo extends AppCompatActivity {
 
     private ArrayList<Fragment> fragments;

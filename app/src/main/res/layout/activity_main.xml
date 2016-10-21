@@ -11,7 +11,7 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:layout_above="@+id/main_bottom"
-        android:layout_alignParentLeft="true"></RelativeLayout>
+        android:layout_alignParentLeft="true"/>
 
 
     <include layout="@layout/for_main_footer"/>

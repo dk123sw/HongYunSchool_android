@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/bg_main_gray"
-    tools:context="cn.xiaocool.hongyunschool.activity.PostTrendActivity">
+    tools:context="cn.xiaocool.hongyunschool.activity.trend.PostTrendActivity">
     <EditText
         android:id="@+id/activity_post_trend_ed_content"
         android:layout_width="match_parent"

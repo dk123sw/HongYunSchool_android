@@ -31,7 +31,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.xiaocool.hongyunschool.R;
 import cn.xiaocool.hongyunschool.activity.ImageDetailActivity;
-import cn.xiaocool.hongyunschool.activity.PostTrendActivity;
+import cn.xiaocool.hongyunschool.activity.trend.PostTrendActivity;
 import cn.xiaocool.hongyunschool.bean.Trends;
 import cn.xiaocool.hongyunschool.net.LocalConstant;
 import cn.xiaocool.hongyunschool.net.NetConstantUrl;

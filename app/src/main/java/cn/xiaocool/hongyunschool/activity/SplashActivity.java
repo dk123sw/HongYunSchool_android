@@ -21,7 +21,9 @@ import cn.xiaocool.hongyunschool.R;
 import cn.xiaocool.hongyunschool.adapter.ViewPagerAdapter;
 import cn.xiaocool.hongyunschool.net.LocalConstant;
 import cn.xiaocool.hongyunschool.utils.SPUtils;
-
+/**
+ * 第一次安装所用到的Activity
+ */
 public class SplashActivity extends Activity implements View.OnClickListener,ViewPager.OnPageChangeListener {
     private   int UID ;
     private Context mContext;

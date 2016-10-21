@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="cn.xiaocool.hongyunschool.activity.AddParentMessageActivity">
+    tools:context="cn.xiaocool.hongyunschool.activity.infromation.AddParentMessageActivity">
 
     <EditText
         android:id="@+id/activity_add_parent_ed_message"

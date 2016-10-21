@@ -6,8 +6,9 @@ import android.os.Bundle;
 
 import cn.jpush.android.api.JPushInterface;
 import cn.xiaocool.hongyunschool.R;
-
-
+/**
+ * 打开apk第一个界面
+ */
 public class FullActivity extends Activity {
 
     @Override

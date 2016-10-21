@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/bg_main_gray"
-    tools:context="cn.xiaocool.baseApp.fragment.FourFragment">
+    tools:context="cn.xiaocool.hongyunschool.fragment.FourFragment">
     <include layout="@layout/title_bar_four"></include>
     <!-- TODO: Update blank fragment layout -->
     <cn.xiaocool.hongyunschool.view.ReboundScrollView

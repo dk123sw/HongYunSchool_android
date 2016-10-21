@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/bg_main_gray"
     android:orientation="vertical"
-    tools:context="cn.xiaocool.hongyunschool.activity.ChangePswActivity">
+    tools:context="cn.xiaocool.hongyunschool.activity.myself.ChangePswActivity">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="55dp"

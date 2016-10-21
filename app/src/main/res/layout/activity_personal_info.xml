@@ -6,7 +6,7 @@
     android:background="@color/bg_main_gray"
     android:orientation="vertical"
     android:id="@+id/activity_personal_info_ll_main"
-    tools:context="cn.xiaocool.hongyunschool.activity.PersonalInfoActivity">
+    tools:context="cn.xiaocool.hongyunschool.activity.myself.PersonalInfoActivity">
     <RelativeLayout
         android:id="@+id/activity_personal_info_rl_avatar"
         android:layout_width="match_parent"

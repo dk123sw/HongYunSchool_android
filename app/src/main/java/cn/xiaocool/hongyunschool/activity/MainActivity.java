@@ -63,6 +63,7 @@ public class MainActivity extends BaseActivity {
     private Fragment[] fragments;
     private Context context;
 
+//  弹出的对话框
     private NiceDialog mDialog = null;
     private CheckVersionModel versionModel;
     private static final int REQUEST_WRITE_STORAGE = 111;
@@ -123,6 +124,7 @@ public class MainActivity extends BaseActivity {
         thirdFragment = new ThirdFragment();
         fourFragment = new FourFragment();
         secondParentFragment = new SecondParentFragment();
+        //根据是否登录切换不同的消息界面
         if(SPUtils.get(context,LocalConstant.USER_TYPE,"1").equals("0")){
             fragments = new Fragment[]{firstFragment,secondParentFragment,thirdFragment,fourFragment};
         }else{
@@ -244,6 +246,7 @@ public class MainActivity extends BaseActivity {
             mDialog.show();
         }
     }
+//    Android6.0新增加的运行时权限检测，这个是对存储空间的运行判断
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);

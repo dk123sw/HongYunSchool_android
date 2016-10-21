@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,7 +34,7 @@ public abstract class BaseActivity extends FragmentActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
 
         super.setContentView(R.layout.activity_base);
-        //添加ctivity集合
+        //添加Activity集合
         MyApplication.getInstance().addActivity(this);
         try {
             if (isSetStatusBar) {
@@ -42,6 +43,8 @@ public abstract class BaseActivity extends FragmentActivity {
         }catch (Exception e){
 
         }
+//      @DK 测试活动的方法
+        Log.e("BaseActivity" , getClass().getSimpleName());
 
         view = findViewById(R.id.top_bar);
         top_name = (TextView) findViewById(R.id.top_name);
@@ -98,8 +101,9 @@ public abstract class BaseActivity extends FragmentActivity {
             getWindow().addFlags(
                     WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
             // 透明导航栏
-            getWindow().addFlags(
-                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+//            透明导航栏导致RadioButton与手机自带导航栏重叠
+//            getWindow().addFlags(
+//                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
             setStatusHeight();
         }
     }

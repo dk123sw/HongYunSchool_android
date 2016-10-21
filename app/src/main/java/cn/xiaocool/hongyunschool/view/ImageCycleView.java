@@ -28,45 +28,45 @@ import cn.xiaocool.hongyunschool.R;
 
 /**
  *  <Pre>
- * 自定义图片自动轮播控件，自定轮播指示器样式，支持点击，无限轮播，网络下载图片</br>
- * 可是使用XUtil的BitmapUtils也可是使用smart-image-vie��持轮播文字切�?</br>
- * 此插件是基于viewpager实现�?,�?要导入android-support-v4.jar</br></br>
+ * 鑷畾涔夊浘鐗囪嚜鍔ㄨ疆鎾帶浠讹紝鑷畾杞挱鎸囩ず鍣ㄦ牱寮忥紝鏀寔鐐瑰嚮锛屾棤闄愯疆鎾紝缃戠粶涓嬭浇鍥剧墖</br>
+ * 鍙槸浣跨敤XUtil鐨凚itmapUtils涔熷彲鏄娇鐢╯mart-image-vie敮鎸佽疆鎾枃瀛楀垏鎹?</br>
+ * 姝ゆ彃浠舵槸鍩轰簬viewpager瀹炵幇鐨?,闇?瑕佸鍏ndroid-support-v4.jar</br></br>
  *
- * 如果使用网络图片记得加权限�??</br>
+ * 濡傛灉浣跨敤缃戠粶鍥剧墖璁板緱鍔犳潈闄愩??</br>
  * uses-permission android:name="android.permission.INTERNET"
  * uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
  *
- * 主要功能:</br></br>
- * 1.支持设置文字提示</br>
- * 2.支持修改轮播指示器的样式及位置（修改view_cycle_image.xml样式,不能修改id�?</br>
- * 3.支持修改文字提样式及位置（修改view_cycle_image.xml样式,不能修改id�?</br>
- * 4.支持设置是否�?启自动轮�?</br>
- * 5.支持运行中启动和停止自动轮播</br>
- * 6.支持网络加载图片，资源图片id，sd卡图�?</br>
- * 7.设置支持XUtil的BitmapUtils也可是使用smart-image-view加载图片</br>
- * 8.支持点击事件</br>
- * 9.默认是第�?�?</br></br>
+ * 涓昏鍔熻兘:</br></br>
+ * 1.鏀寔璁剧疆鏂囧瓧鎻愮ず</br>
+ * 2.鏀寔淇敼杞挱鎸囩ず鍣ㄧ殑鏍峰紡鍙婁綅缃紙淇敼view_cycle_image.xml鏍峰紡,涓嶈兘淇敼id锛?</br>
+ * 3.鏀寔淇敼鏂囧瓧鎻愭牱寮忓強浣嶇疆锛堜慨鏀箆iew_cycle_image.xml鏍峰紡,涓嶈兘淇敼id锛?</br>
+ * 4.鏀寔璁剧疆鏄惁寮?鍚嚜鍔ㄨ疆鎾?</br>
+ * 5.鏀寔杩愯涓惎鍔ㄥ拰鍋滄鑷姩杞挱</br>
+ * 6.鏀寔缃戠粶鍔犺浇鍥剧墖锛岃祫婧愬浘鐗噄d锛宻d鍗″浘鐗?</br>
+ * 7.璁剧疆鏀寔XUtil鐨凚itmapUtils涔熷彲鏄娇鐢╯mart-image-view鍔犺浇鍥剧墖</br>
+ * 8.鏀寔鐐瑰嚮浜嬩欢</br>
+ * 9.榛樿鏄涓?寮?</br></br>
  *
- * demo实例:</br> </br>
+ * demo瀹炰緥:</br> </br>
  *
  List<ImageCycleView.ImageInfo> list=new ArrayList<ImageCycleView.ImageInfo>();
  mImageCycleView = (ImageCycleView) findViewById(R.id.icv_topView);
 
- //避免网络图片和本地图片混合使用，特殊要求可在ImageCycleView.LoadImageCallBack回调中判断处�?
- //判断是数字加载本地图片，是http请求加载网络图片
+ //閬垮厤缃戠粶鍥剧墖鍜屾湰鍦板浘鐗囨贩鍚堜娇鐢紝鐗规畩瑕佹眰鍙湪ImageCycleView.LoadImageCallBack鍥炶皟涓垽鏂鐞?
+ //鍒ゆ柇鏄暟瀛楀姞杞芥湰鍦板浘鐗囷紝鏄痟ttp璇锋眰鍔犺浇缃戠粶鍥剧墖
  List<ImageCycleView.ImageInfo> list=new ArrayList<ImageCycleView.ImageInfo>();
 
- //使用本地图片
+ //浣跨敤鏈湴鍥剧墖
  //list.add(new ImageCycleView.ImageInfo(R.drawable.a1,"111111111111",""));
  //list.add(new ImageCycleView.ImageInfo(R.drawable.a2,"222222222222222",""));
  //list.add(new ImageCycleView.ImageInfo(R.drawable.a3,"3333333333333",""));
 
- //SD卡图片资�?
+ //SD鍗″浘鐗囪祫婧?
  list.add(new ImageCycleView.ImageInfo(new File(Environment.getExternalStorageDirectory(),"a1.jpg"),"11111",""));
  list.add(new ImageCycleView.ImageInfo(new File(Environment.getExternalStorageDirectory(),"a2.jpg"),"22222",""));
  list.add(new ImageCycleView.ImageInfo(new File(Environment.getExternalStorageDirectory(),"a3.jpg"),"33333",""));
 
- //使用网络加载图片
+ //浣跨敤缃戠粶鍔犺浇鍥剧墖
  list.add(new ImageCycleView.ImageInfo("http://img.lakalaec.com/ad/57ab6dc2-43f2-4087-81e2-b5ab5681642d.jpg","3333333333333",""));
  list.add(new ImageCycleView.ImageInfo("http://img.lakalaec.com/ad/cb56a1a6-6c33-41e4-9c3c-363f4ec6b728.jpg","222222222222222",""));
  list.add(new ImageCycleView.ImageInfo("http://img.lakalaec.com/ad/e4229e25-3906-4049-9fe8-e2b52a98f6d1.jpg","3333333333333",""));
@@ -76,22 +76,22 @@ import cn.xiaocool.hongyunschool.R;
 @Override
 public ImageView loadAndDisplay(ImageCycleView.ImageInfo imageInfo){
 
-//本地图片
+//鏈湴鍥剧墖
 //ImageView imageView=new ImageView(MainActivity.this);
 //imageView.setImageResource(Integer.parseInt(imageInfo.image.toString()));
 //return imageView;
 
-//使用SD卡图�?
+//浣跨敤SD鍗″浘鐗?
 SmartImageView smartImageView=new SmartImageView(MainActivity.this);
 smartImageView.setImageURI(Uri.fromFile((File)imageInfo.image));
 return smartImageView;
 
-//使用SmartImageView
+//浣跨敤SmartImageView
 //SmartImageView smartImageView=new SmartImageView(MainActivity.this);
 //smartImageView.setImageResource(Integer.parseInt(imageInfo.image.toString()));
 //return smartImageView;
 
-//使用BitmapUtils
+//浣跨敤BitmapUtils
 BitmapUtils bitmapUtils=new BitmapUtils(MainActivity.this);
 ImageView imageView=new ImageView(MainActivity.this);
 bitmapUtils.display(imageView,imageInfo.image.toString());
@@ -101,57 +101,57 @@ return imageView;
  *
  *
  * </Pre>
- * @author 代凯�?
+ * @author 浠ｅ嚡鐢?
  *
  */
 public class ImageCycleView extends FrameLayout {
 
 	/**
-	 * 上下�?
+	 * 涓婁笅鏂?
 	 */
 	private Context mContext;
 	/**
-	 * 图片轮播视图
+	 * 鍥剧墖杞挱瑙嗗浘
 	 */
 	private ImageCycleViewPager mViewPager;
 	/**
-	 * 数据集合
+	 * 鏁版嵁闆嗗悎
 	 * Map<String,String> map=new HashMap<String, String>();
 	 * map.put("","");
 	 *
 	 */
 	private List<ImageInfo> data=new ArrayList<ImageInfo>();
 	/**
-	 * 加载图片回调函数
+	 * 鍔犺浇鍥剧墖鍥炶皟鍑芥暟
 	 */
 	private LoadImageCallBack mLoadImageCallBack;
 
 	/**
-	 * 图片轮播指示器容�?
+	 * 鍥剧墖杞挱鎸囩ず鍣ㄥ鍣?
 	 */
 	private LinearLayout mIndicationGroup;
 	/**
-	 * 轮播的�?�数
+	 * 杞挱鐨勬?绘暟
 	 */
 	private int mCount=0;
 	/**
-	 * 未获得焦点指示器资源
+	 * 鏈幏寰楃劍鐐规寚绀哄櫒璧勬簮
 	 */
 	private Bitmap unFocusIndicationStyle;
 	/**
-	 * 获得焦点指示器资�?
+	 * 鑾峰緱鐒︾偣鎸囩ず鍣ㄨ祫婧?
 	 */
 	private Bitmap focusIndicationStyle;
 	/**
-	 * 指示器间距相对于自身的百分比,默认间距为指示器高度�?1/2
+	 * 鎸囩ず鍣ㄩ棿璺濈浉瀵逛簬鑷韩鐨勭櫨鍒嗘瘮,榛樿闂磋窛涓烘寚绀哄櫒楂樺害鐨?1/2
 	 */
 	private float indication_self_margin_percent=0.5f;
 	/**
-	 * 单击事件监听�?
+	 * 鍗曞嚮浜嬩欢鐩戝惉鍣?
 	 */
 	private OnPageClickListener mOnPageClickListener;
 	/**
-	 * 图片文本提示
+	 * 鍥剧墖鏂囨湰鎻愮ず
 	 */
 	private TextView mText;
 
@@ -167,7 +167,7 @@ public class ImageCycleView extends FrameLayout {
 	}
 
 	/**
-	 * 初始化基�?信息
+	 * 鍒濆鍖栧熀纭?淇℃伅
 	 * @param context
 	 */
 	private void init(Context context){
@@ -178,8 +178,8 @@ public class ImageCycleView extends FrameLayout {
 	}
 
 	/**
-	 * 初始化view控件
-	 * @author 代凯�?
+	 * 鍒濆鍖杤iew鎺т欢
+	 * @author 浠ｅ嚡鐢?
 	 */
 	private void initView() {
 		View.inflate(mContext, R.layout.view_image_cycle, this);
@@ -197,11 +197,11 @@ public class ImageCycleView extends FrameLayout {
 	}
 
 	/**
-	 * 设置轮播指示器样式，如果你对默认的样式不满意可以自己设置
-	 * @param indicationStyle 资源类型,color,image,shape
-	 * @param unFocus 未获得焦点指示器资源id  图片或shape或color�?
-	 * @param focus 获得焦点指示器资源id 图片或shape或color�?
-	 * @param indication_self_percent 自身高度的百分比 >=0f
+	 * 璁剧疆杞挱鎸囩ず鍣ㄦ牱寮忥紝濡傛灉浣犲榛樿鐨勬牱寮忎笉婊℃剰鍙互鑷繁璁剧疆
+	 * @param indicationStyle 璧勬簮绫诲瀷,color,image,shape
+	 * @param unFocus 鏈幏寰楃劍鐐规寚绀哄櫒璧勬簮id  鍥剧墖鎴杝hape鎴朿olor鍊?
+	 * @param focus 鑾峰緱鐒︾偣鎸囩ず鍣ㄨ祫婧恑d 鍥剧墖鎴杝hape鎴朿olor鍊?
+	 * @param indication_self_percent 鑷韩楂樺害鐨勭櫨鍒嗘瘮 >=0f
 	 */
 	public void setIndicationStyle(IndicationStyle indicationStyle,int unFocus,int focus,float indication_self_percent){
 		if(indicationStyle== IndicationStyle.COLOR){
@@ -216,24 +216,24 @@ public class ImageCycleView extends FrameLayout {
 	}
 
 	/**
-	 * 图片轮播是自动滚动状�?  true 自动滚动，false 图片不能自动滚动只能手动左右滑动
+	 * 鍥剧墖杞挱鏄嚜鍔ㄦ粴鍔ㄧ姸鎬?  true 鑷姩婊氬姩锛宖alse 鍥剧墖涓嶈兘鑷姩婊氬姩鍙兘鎵嬪姩宸﹀彸婊戝姩
 	 */
 	private boolean isAutoCycle=true;
 	/**
-	 *自动轮播时间间隔默认5�?
+	 *鑷姩杞挱鏃堕棿闂撮殧榛樿5绉?
 	 */
 	private long mCycleDelayed=5000;
 
 	/**
-	 * 设置是否自动无限轮播
-	 * @param delayed  自动轮播时间间隔
+	 * 璁剧疆鏄惁鑷姩鏃犻檺杞挱
+	 * @param delayed  鑷姩杞挱鏃堕棿闂撮殧
 	 */
 	public void setCycleDelayed(long delayed){
 		mCycleDelayed=delayed;
 	}
 
 	/**
-	 * 设置是否自动无限轮播
+	 * 璁剧疆鏄惁鑷姩鏃犻檺杞挱
 	 * @param state
 	 */
 	public void setAutoCycle(Boolean state){
@@ -241,25 +241,25 @@ public class ImageCycleView extends FrameLayout {
 	}
 
 	/**
-	 * 加载显示的数�?  网络图片资源及标�?
-	 * @param list       数据
-	 * @param callBack   如何加载图片及显示的回调方法 not null
+	 * 鍔犺浇鏄剧ず鐨勬暟鎹?  缃戠粶鍥剧墖璧勬簮鍙婃爣棰?
+	 * @param list       鏁版嵁
+	 * @param callBack   濡備綍鍔犺浇鍥剧墖鍙婃樉绀虹殑鍥炶皟鏂规硶 not null
 	 */
 	public void loadData(List<ImageInfo> list,LoadImageCallBack callBack){
 		data=list;
 		mCount=list.size();
 		initIndication();
 		if(callBack==null){
-			new IllegalArgumentException("LoadImageCallBack 回调函数不能为空�?");
+			new IllegalArgumentException("LoadImageCallBack 鍥炶皟鍑芥暟涓嶈兘涓虹┖锛?");
 		}
 		mLoadImageCallBack=callBack;
 		mViewPager.setAdapter(new ImageCycleAdapter());
-		//�?大�?�中�? 的第�?�?
+		//鏈?澶у?间腑闂? 鐨勭涓?涓?
 		mViewPager.setCurrentItem(Integer.MAX_VALUE/2-((Integer.MAX_VALUE/2)%mCount));
 	}
 
 	/**
-	 * 设置点击事件监听回调函数
+	 * 璁剧疆鐐瑰嚮浜嬩欢鐩戝惉鍥炶皟鍑芥暟
 	 * @param listener
 	 */
 	public void setOnPageClickListener(OnPageClickListener listener){
@@ -267,20 +267,20 @@ public class ImageCycleView extends FrameLayout {
 	}
 
 	/**
-	 * 轮播控件的监听事�?
+	 * 杞挱鎺т欢鐨勭洃鍚簨浠?
 	 */
 	public interface OnPageClickListener {
 		/**
-		 * 单击图片事件
-		 * @param imageView 被点击的View对象
-		 * @param imageInfo 数据信息
+		 * 鍗曞嚮鍥剧墖浜嬩欢
+		 * @param imageView 琚偣鍑荤殑View瀵硅薄
+		 * @param imageInfo 鏁版嵁淇℃伅
 		 */
 		void onClick(View imageView, ImageInfo imageInfo);
 	}
 
 
 	/**
-	 * 初始化指标器
+	 * 鍒濆鍖栨寚鏍囧櫒
 	 */
 	private void initIndication(){
 		mIndicationGroup.removeAllViews();
@@ -301,7 +301,7 @@ public class ImageCycleView extends FrameLayout {
 
 	private Bitmap drawCircle(int radius,int color){
 		Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-		paint.setColor(color);// 设置颜色
+		paint.setColor(color);// 璁剧疆棰滆壊
 		Bitmap bitmap=Bitmap.createBitmap(radius,radius, Bitmap.Config.ARGB_8888);
 		Canvas canvas=new Canvas(bitmap);
 		canvas.drawCircle(radius / 2, radius / 2, radius / 2, paint);
@@ -322,34 +322,34 @@ public class ImageCycleView extends FrameLayout {
 
 
 	/**
-	 * 加载图片并显示回调接�?
+	 * 鍔犺浇鍥剧墖骞舵樉绀哄洖璋冩帴鍙?
 	 */
 	public interface LoadImageCallBack{
 		/**
-		 * 自己如何设置加载图片
-		 * @param imageInfo  数据信息
+		 * 鑷繁濡備綍璁剧疆鍔犺浇鍥剧墖
+		 * @param imageInfo  鏁版嵁淇℃伅
 		 */
 		ImageView loadAndDisplay(ImageInfo imageInfo);
 	}
 
 	/**
-	 * 轮播图片监听
-	 * @author 代凯�?
+	 * 杞挱鍥剧墖鐩戝惉
+	 * @author 浠ｅ嚡鐢?
 	 */
 	private final class ImageCyclePageChangeListener implements OnPageChangeListener {
 
-		//上次指示器指示的位置,�?始为默认位置0
+		//涓婃鎸囩ず鍣ㄦ寚绀虹殑浣嶇疆,寮?濮嬩负榛樿浣嶇疆0
 		private int preIndex=0;
 
 		@Override
 		public void onPageSelected(int index) {
 			index=index%mCount;
-			//更新文本信息
+			//鏇存柊鏂囨湰淇℃伅
 			String text=data.get(index).text;
 			mText.setText(TextUtils.isEmpty(text)?"":text);
-			//恢复默认没有获得焦点指示器样�?
+			//鎭㈠榛樿娌℃湁鑾峰緱鐒︾偣鎸囩ず鍣ㄦ牱寮?
 			((ImageView)(mIndicationGroup.getChildAt(preIndex))).setImageBitmap(unFocusIndicationStyle);
-			// 设置当前显示图片的指示器样式
+			// 璁剧疆褰撳墠鏄剧ず鍥剧墖鐨勬寚绀哄櫒鏍峰紡
 			((ImageView)(mIndicationGroup.getChildAt(index))).setImageBitmap(focusIndicationStyle);
 			preIndex=index;
 		}
@@ -365,7 +365,7 @@ public class ImageCycleView extends FrameLayout {
 	}
 
 	/**
-	 * 图片轮播适配�?
+	 * 鍥剧墖杞挱閫傞厤鍣?
 	 */
 	private class ImageCycleAdapter extends PagerAdapter {
 
@@ -377,7 +377,7 @@ public class ImageCycleView extends FrameLayout {
 			imageView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
 					ViewGroup.LayoutParams.MATCH_PARENT));
 			imageView.setScaleType(ImageView.ScaleType.FIT_XY);
-			// 设置图片点击监听
+			// 璁剧疆鍥剧墖鐐瑰嚮鐩戝惉
 			imageView.setOnClickListener(new OnClickListener() {
 				@Override
 				public void onClick(View v) {
@@ -408,21 +408,21 @@ public class ImageCycleView extends FrameLayout {
 
 
 	/**
-	 * �?始图片轮�?
+	 * 寮?濮嬪浘鐗囪疆鎾?
 	 */
 	private void startImageCycle() {
 		handler.sendEmptyMessageDelayed(0, mCycleDelayed);
 	}
 
 	/**
-	 * 暂停图片轮播
+	 * 鏆傚仠鍥剧墖杞挱
 	 */
 	private void stopImageCycle() {
 		handler.removeCallbacksAndMessages(null);
 	}
 
 	/**
-	 * 实现自动轮播
+	 * 瀹炵幇鑷姩杞挱
 	 */
 	private Handler handler=new Handler(new Handler.Callback() {
 		@Override
@@ -436,18 +436,18 @@ public class ImageCycleView extends FrameLayout {
 	});
 
 	/**
-	 * 触摸停止计时器，抬起启动计时�?
+	 * 瑙︽懜鍋滄璁℃椂鍣紝鎶捣鍚姩璁℃椂鍣?
 	 */
 	@Override
 	public boolean dispatchTouchEvent(MotionEvent event) {
 		if(event.getAction()==MotionEvent.ACTION_UP){
 			if(isAutoCycle) {
-				// �?始图片滚�?
+				// 寮?濮嬪浘鐗囨粴鍔?
 				startImageCycle();
 			}
 		}else{
 			if(isAutoCycle) {
-				// 停止图片滚动
+				// 鍋滄鍥剧墖婊氬姩
 				stopImageCycle();
 			}
 		}
@@ -457,7 +457,7 @@ public class ImageCycleView extends FrameLayout {
 	@Override
 	protected void onDetachedFromWindow() {
 		super.onDetachedFromWindow();
-		// 停止图片滚动
+		// 鍋滄鍥剧墖婊氬姩
 		stopImageCycle();
 	}
 
@@ -471,7 +471,7 @@ public class ImageCycleView extends FrameLayout {
 
 
 	/**
-	 * 自定义ViewPager主要用于事件处理
+	 * 鑷畾涔塚iewPager涓昏鐢ㄤ簬浜嬩欢澶勭悊
 	 */
 	public class ImageCycleViewPager  extends ViewPager {
 
@@ -484,7 +484,7 @@ public class ImageCycleView extends FrameLayout {
 		}
 
 		/**
-		 * 事件拦截
+		 * 浜嬩欢鎷︽埅
 		 */
 		@Override
 		public boolean onInterceptTouchEvent(MotionEvent ev) {
@@ -492,7 +492,7 @@ public class ImageCycleView extends FrameLayout {
 		}
 
 		/**
-		 * 事件分发
+		 * 浜嬩欢鍒嗗彂
 		 */
 		@Override
 		public boolean dispatchTouchEvent(MotionEvent ev) {
@@ -500,7 +500,7 @@ public class ImageCycleView extends FrameLayout {
 			return super.dispatchTouchEvent(ev);
 		}
 		/**
-		 * 事件处理
+		 * 浜嬩欢澶勭悊
 		 */
 		@Override
 		public boolean onTouchEvent(MotionEvent ev) {

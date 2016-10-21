@@ -4,7 +4,9 @@ import android.os.Bundle;
 
 import cn.xiaocool.hongyunschool.R;
 import cn.xiaocool.hongyunschool.utils.BaseActivity;
-
+/**
+ * 系统通知
+ */
 public class SystemNewsActivity extends BaseActivity {
 
     @Override

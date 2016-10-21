@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@color/bg_main_gray"
-    tools:context="cn.xiaocool.hongyunschool.activity.AddressActivity">
+    tools:context="cn.xiaocool.hongyunschool.activity.myself.AddressActivity">
     <include layout="@layout/title_bar_second"></include>
     <com.lzy.widget.tab.PagerSlidingTabStrip
         android:id="@+id/activity_address_tab"

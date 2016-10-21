@@ -10,7 +10,7 @@ import cn.xiaocool.hongyunschool.R;
 public class ProgressUtil {
     private static AppLoadingDialog loadingDialog;
 
-    public static AppLoadingDialog getLoadingDialog(Activity activity) {
+    private static AppLoadingDialog getLoadingDialog(Activity activity) {
         if (loadingDialog != null) {
             loadingDialog = null;
         }
