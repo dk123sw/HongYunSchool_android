@@ -51,7 +51,8 @@ import cn.xiaocool.hongyunschool.view.NoScrollListView;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FirstFragment extends BaseFragment implements BaseSliderView.OnSliderClickListener,ViewPagerEx.OnPageChangeListener  {
+public class FirstFragment extends BaseFragment implements BaseSliderView.OnSliderClickListener,
+        ViewPagerEx.OnPageChangeListener  {
 
 
     @BindView(R.id.first_top_name)

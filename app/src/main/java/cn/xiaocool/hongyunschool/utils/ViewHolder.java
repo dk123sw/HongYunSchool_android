@@ -20,6 +20,7 @@ import cn.xiaocool.hongyunschool.view.NoScrollGridView;
 
 /**
  * Created by Administrator on 2016/8/12 0012.
+ * 自定义的设置图片、文字的类
  */
 public class ViewHolder {
     private SparseArray<View> mViews;

@@ -274,6 +274,8 @@ public class MainActivity extends BaseActivity {
 //        Log.e("apkUrl", versionModel.getUrl());
 //        it.putExtra("apkUrl", APK_DOWNLOAD_URL);
 //        startService(it);
+
+//        关闭此对话框，将其从屏幕中删除。 这个方法可以从任何线程安全地调用。
         mDialog.dismiss();
     }
 

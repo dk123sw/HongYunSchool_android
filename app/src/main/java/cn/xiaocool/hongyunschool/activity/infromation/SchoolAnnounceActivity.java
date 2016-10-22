@@ -283,6 +283,16 @@ public class SchoolAnnounceActivity extends BaseActivity {
                 .setImageByUrl(R.id.item_sn_head_iv, datas.getNotice_info().get(0).getPhoto())
                 .setText(R.id.item_sn_read, "总发" + datas.getReceiv_list().size() + " 已读" + alreadyReads.size() + " 未读" + notReads.size());
 
+        //进入已读未读界面
+        holder.getView(R.id.item_sn_read).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("yidu",alreadyReads);
+                bundle.putSerializable("weidu",notReads);
+                startActivity(ReadListSchoolAnnonceActivity.class, bundle);
+            }
+        });
     }
 
     /**

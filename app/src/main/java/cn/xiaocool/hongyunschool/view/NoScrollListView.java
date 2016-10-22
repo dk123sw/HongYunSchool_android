@@ -6,6 +6,7 @@ import android.widget.ListView;
 
 /**
  * Created by mac on 16/2/21.
+ * 用于解决ListView和ScollView的冲突
  */
 public class NoScrollListView extends ListView {
 

@@ -208,10 +208,10 @@ public class ClassNewsActivity extends BaseActivity {
                 adapter.notifyDataSetChanged();
             } else {
                 adapter = new CommonAdapter<ClassNewsReceive>(getBaseContext(), classNewsReceives, R.layout.school_announcement_item) {
-                    @Override
-                    public void convert(ViewHolder holder, ClassNewsReceive datas) {
-                        setItemReceive(holder, datas);
-                    }
+                        @Override
+                        public void convert(ViewHolder holder, ClassNewsReceive datas) {
+                            setItemReceive(holder, datas);
+                        }
                 };
                 schoolNewsLv.setAdapter(adapter);
             }

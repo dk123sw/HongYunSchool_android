@@ -14,7 +14,9 @@ import cn.xiaocool.hongyunschool.utils.BaseActivity;
 import cn.xiaocool.hongyunschool.utils.CommonAdapter;
 import cn.xiaocool.hongyunschool.utils.ViewHolder;
 import cn.xiaocool.hongyunschool.view.NoScrollListView;
-
+/**
+ * 班级消息->列表
+ */
 public class ReadListClassNewLeaderActivity extends BaseActivity {
 
     @BindView(R.id.activity_read_list_tv_yidu)
