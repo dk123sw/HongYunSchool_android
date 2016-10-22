@@ -1,13 +1,16 @@
 package cn.xiaocool.hongyunschool.activity;
 
-import android.app.Fragment;
-import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
@@ -21,6 +24,8 @@ import com.google.gson.reflect.TypeToken;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -62,6 +67,14 @@ public class MainActivity extends BaseActivity {
     private SecondParentFragment secondParentFragment;
     private Fragment[] fragments;
     private Context context;
+    private ViewPager viewPager;
+    private ArrayList<Fragment> mFg;
+//    private GestureDetector gestureDetector;
+//    private GestureDetectorCompat gestureDetectorCompat;
+//    private SharedPreferences sharedPreferences;
+//    private OnGestureListener onGestureListener;
+//    private static final int FLING_MIN_DISTANCE = 50;
+//    private final int FLING_MIN_VELOCITY = 0;
 
 //  弹出的对话框
     private NiceDialog mDialog = null;
@@ -84,6 +97,8 @@ public class MainActivity extends BaseActivity {
         /*TelephonyManager tm = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
        *//* String DEVICE_ID = tm.getDeviceId();
         Log.e("TAG",DEVICE_ID);*/
+//        initGes();
+        __setViewPagerListener();//ViewPager滑动的监听事件
     }
 
     private void setVersionDialog() {
@@ -160,8 +175,19 @@ public class MainActivity extends BaseActivity {
 
         }
         currentTabIndex = index;
+
+        viewPager = (ViewPager) findViewById(R.id.vp);
+        mFg = new ArrayList<Fragment>();
+        mFg.add(firstFragment);
+        mFg.add(secondFragment);
+        mFg.add(thirdFragment);
+        mFg.add(fourFragment);
+        FragmentManager fm = getSupportFragmentManager();
+        MyAdapter adapter = new MyAdapter(fm);
+        viewPager.setAdapter(adapter);
     }
 
+     class MyAdapter extends FragmentPagerAdapter
 
 
     /**
@@ -296,4 +322,28 @@ public class MainActivity extends BaseActivity {
         }.getType());
     }
 
+//    private void initGes(){
+//        //记录滑动前在哪个Fragment
+//        sharedPreferences = getSharedPreferences("local",Context.MODE_PRIVATE);
+//        sharedPreferences.getInt("localFlag", 0);
+//
+//        gestureDetectorCompat = new GestureDetectorCompat(this , new MyGestureListener())
+//}
+//
+//    class MyGestureListener extends GestureDetector.SimpleOnGestureListener {
+//        private static final String DEBUG_TAG = "Gestures";
+//
+//        @Override
+//        public boolean onDown(MotionEvent event) {
+//            Log.d(DEBUG_TAG,"onDown: " + event.toString());
+//            return true;
+//        }
+//
+//        @Override
+//        public boolean onFling(MotionEvent event1, MotionEvent event2,
+//                               float velocityX, float velocityY) {
+//            Log.d(DEBUG_TAG, "onFling: " + event1.toString()+event2.toString());
+//            return true;
+//        }
+//    }
 }
