@@ -114,7 +114,7 @@ public class SchoolAnnouceReceive {
         this.pic = pic;
     }
 
-    public static class NoticeInfoBean {
+    public static class NoticeInfoBean{
         private String name;
         private String photo;
         private String id;
@@ -187,9 +187,11 @@ public class SchoolAnnouceReceive {
         public void setCreate_time(String create_time) {
             this.create_time = create_time;
         }
+
+
     }
 
-    public static class ReceivListBean {
+    public static class ReceivListBean{
         private String id;
         private String noticeid;
         private String receiverid;

@@ -7,10 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
@@ -24,8 +21,6 @@ import com.google.gson.reflect.TypeToken;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -67,8 +62,8 @@ public class MainActivity extends BaseActivity {
     private SecondParentFragment secondParentFragment;
     private Fragment[] fragments;
     private Context context;
-    private ViewPager viewPager;
-    private ArrayList<Fragment> mFg;
+//    private ViewPager viewPager;
+//    private ArrayList<Fragment> mFg;
 //    private GestureDetector gestureDetector;
 //    private GestureDetectorCompat gestureDetectorCompat;
 //    private SharedPreferences sharedPreferences;
@@ -98,7 +93,7 @@ public class MainActivity extends BaseActivity {
        *//* String DEVICE_ID = tm.getDeviceId();
         Log.e("TAG",DEVICE_ID);*/
 //        initGes();
-        __setViewPagerListener();//ViewPager滑动的监听事件
+//        __setViewPagerListener();//ViewPager滑动的监听事件
     }
 
     private void setVersionDialog() {
@@ -145,27 +140,31 @@ public class MainActivity extends BaseActivity {
         }else{
             fragments = new Fragment[]{firstFragment,secondFragment,thirdFragment,fourFragment};
         }
-        getFragmentManager().beginTransaction().add(R.id.fragment_container, firstFragment).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, firstFragment).commit();
     }
 
     @OnClick({R.id.main_tab_home, R.id.main_tab_sort, R.id.main_tab_quick, R.id.main_tab_mine})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.main_tab_home:
+//                viewPager.setCurrentItem(0);
                 index = 0;
                 break;
             case R.id.main_tab_sort:
+//                viewPager.setCurrentItem(1);
                 index = 1;
                 break;
             case R.id.main_tab_quick:
+//                viewPager.setCurrentItem(2);
                 index = 2;
                 break;
             case R.id.main_tab_mine:
+//                viewPager.setCurrentItem(3);
                 index = 3;
                 break;
         }
         if (currentTabIndex != index) {
-            FragmentTransaction transaction = getFragmentManager().beginTransaction();
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.hide(fragments[currentTabIndex]);
             if (!fragments[index].isAdded()) {
                 transaction.add(R.id.fragment_container, fragments[index]);
@@ -176,18 +175,71 @@ public class MainActivity extends BaseActivity {
         }
         currentTabIndex = index;
 
-        viewPager = (ViewPager) findViewById(R.id.vp);
-        mFg = new ArrayList<Fragment>();
-        mFg.add(firstFragment);
-        mFg.add(secondFragment);
-        mFg.add(thirdFragment);
-        mFg.add(fourFragment);
-        FragmentManager fm = getSupportFragmentManager();
-        MyAdapter adapter = new MyAdapter(fm);
-        viewPager.setAdapter(adapter);
+//        viewPager = (ViewPager) findViewById(R.id.vp);
+//        mFg = new ArrayList<>();
+//        mFg.add(firstFragment);
+//        mFg.add(secondFragment);
+//        mFg.add(thirdFragment);
+//        mFg.add(fourFragment);
+//        FragmentManager fm = getSupportFragmentManager();
+//        MyAdapter adapter = new MyAdapter(fm);
+//        viewPager.setAdapter(adapter);
+//    }
+//
+//     class MyAdapter extends FragmentPagerAdapter{
+//
+//         public MyAdapter(FragmentManager fm){
+//            super(fm);
+//         }
+//
+//         @Override
+//         public Fragment getItem(int position) {
+//             return mFg.get(position);
+//         }
+//
+//         @Override
+//         public int getCount() {
+//             return mFg.size();
+//         }
+//     }
+//
+//    private void __setViewPagerListener(){
+//        mainTabHome.setSelected(true);
+//        mainTabMine.setSelected(true);
+//        mainTabQuick.setSelected(true);
+//        mainTabSort.setSelected(true);
+//        viewPager.addOnPageChangeListener(new OnPageChangeListener() {
+//            @Override
+//            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+//
+//            }
+//
+//            @Override
+//            public void onPageSelected(int position) {
+//                switch (position) {
+//                    case R.id.main_tab_home:
+//                        mainTabHome.setChecked(true);
+//                        break;
+//                    case R.id.main_tab_mine:
+//                        mainTabMine.setChecked(true);
+//                        break;
+//                    case R.id.main_tab_quick:
+//                        mainTabQuick.setChecked(true);
+//                        break;
+//                    case R.id.main_tab_sort:
+//                        mainTabSort.setChecked(true);
+//                        break;
+//                    default:
+//                        mainTabHome.setChecked(true);
+//                        break;
+//                }
+//            }
+//
+//            @Override
+//            public void onPageScrollStateChanged(int state) {
+//            }
+//        });
     }
-
-     class MyAdapter extends FragmentPagerAdapter
 
 
     /**

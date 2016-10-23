@@ -75,6 +75,7 @@ public class FirstFragment extends BaseFragment implements BaseSliderView.OnSlid
     private ArrayList<WebListInfo> newsList;
     private ArrayList<Classevents.PicBean> picBeans;
 
+
     @Override
     public View initView(LayoutInflater inflater, ViewGroup container) {
         return inflater.inflate(R.layout.fragment_first, container, false);
