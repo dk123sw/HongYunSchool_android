@@ -1,5 +1,6 @@
 package cn.xiaocool.hongyunschool.bean;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -148,7 +149,7 @@ public class SchoolAnnouncement {
         this.like = like;
     }
 
-    public static class ReceiveListBean {
+    public static class ReceiveListBean implements Serializable{
         private String name;
         private String photo;
         private String phone;
