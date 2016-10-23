@@ -1,13 +1,14 @@
 package cn.xiaocool.hongyunschool.activity;
 
-import android.app.Fragment;
-import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
@@ -26,6 +27,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.xiaocool.hongyunschool.R;
+import cn.xiaocool.hongyunschool.adapter.MyAdapter;
 import cn.xiaocool.hongyunschool.bean.CheckVersionModel;
 import cn.xiaocool.hongyunschool.fragment.FirstFragment;
 import cn.xiaocool.hongyunschool.fragment.FourFragment;
@@ -41,7 +43,7 @@ import cn.xiaocool.hongyunschool.utils.SPUtils;
 import cn.xiaocool.hongyunschool.view.NiceDialog;
 
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseActivity implements ViewPager.OnPageChangeListener{
 
 
     @BindView(R.id.fragment_container)
@@ -62,8 +64,16 @@ public class MainActivity extends BaseActivity {
     private SecondParentFragment secondParentFragment;
     private Fragment[] fragments;
     private Context context;
+    //几个代表页面的常量
+    public static final int PAGE_ONE = 0;
+    public static final int PAGE_TWO = 1;
+    public static final int PAGE_THREE = 2;
+    public static final int PAGE_FOUR = 3;
+    private ViewPager viewPager;
+    private MyAdapter myAdapter;
 
-//  弹出的对话框
+
+    //  弹出的对话框
     private NiceDialog mDialog = null;
     private CheckVersionModel versionModel;
     private static final int REQUEST_WRITE_STORAGE = 111;
@@ -84,6 +94,7 @@ public class MainActivity extends BaseActivity {
         /*TelephonyManager tm = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
        *//* String DEVICE_ID = tm.getDeviceId();
         Log.e("TAG",DEVICE_ID);*/
+        mainTabHome.setChecked(true);
     }
 
     private void setVersionDialog() {
@@ -118,39 +129,49 @@ public class MainActivity extends BaseActivity {
         });
     }
 
-    private void init() {
+    public void init() {
         firstFragment = new FirstFragment();
         secondFragment = new SecondFragment();
         thirdFragment = new ThirdFragment();
         fourFragment = new FourFragment();
         secondParentFragment = new SecondParentFragment();
+        myAdapter = new MyAdapter(getSupportFragmentManager());
+        viewPager = (ViewPager) findViewById(R.id.vpager);
+        viewPager.setCurrentItem(0);
+        viewPager.setAdapter(myAdapter);
+        viewPager.addOnPageChangeListener(this);
+        viewPager.setOffscreenPageLimit(4);
         //根据是否登录切换不同的消息界面
         if(SPUtils.get(context,LocalConstant.USER_TYPE,"1").equals("0")){
             fragments = new Fragment[]{firstFragment,secondParentFragment,thirdFragment,fourFragment};
         }else{
             fragments = new Fragment[]{firstFragment,secondFragment,thirdFragment,fourFragment};
         }
-        getFragmentManager().beginTransaction().add(R.id.fragment_container, firstFragment).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, firstFragment).commit();
     }
 
     @OnClick({R.id.main_tab_home, R.id.main_tab_sort, R.id.main_tab_quick, R.id.main_tab_mine})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.main_tab_home:
+                viewPager.setCurrentItem(PAGE_ONE);
                 index = 0;
                 break;
             case R.id.main_tab_sort:
+                viewPager.setCurrentItem(PAGE_TWO);
                 index = 1;
                 break;
             case R.id.main_tab_quick:
+                viewPager.setCurrentItem(PAGE_THREE);
                 index = 2;
                 break;
             case R.id.main_tab_mine:
+                viewPager.setCurrentItem(PAGE_FOUR);
                 index = 3;
                 break;
         }
         if (currentTabIndex != index) {
-            FragmentTransaction transaction = getFragmentManager().beginTransaction();
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.hide(fragments[currentTabIndex]);
             if (!fragments[index].isAdded()) {
                 transaction.add(R.id.fragment_container, fragments[index]);
@@ -296,4 +317,34 @@ public class MainActivity extends BaseActivity {
         }.getType());
     }
 
+
+    //重写ViewPager页面切换的处理方法
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+    }
+
+    @Override
+    public void onPageSelected(int position) {
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int state) {
+        //state的状态有三个，0表示什么都没做，1正在滑动，2滑动完毕
+        if (state == 2) {
+            switch (viewPager.getCurrentItem()) {
+                case PAGE_ONE:
+                    mainTabHome.setChecked(true);
+                    break;
+                case PAGE_TWO:
+                    mainTabSort.setChecked(true);
+                    break;
+                case PAGE_THREE:
+                    mainTabQuick.setChecked(true);
+                    break;
+                case PAGE_FOUR:
+                    mainTabMine.setChecked(true);
+                    break;
+            }
+        }
+    }
 }
