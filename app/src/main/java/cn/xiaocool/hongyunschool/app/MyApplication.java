@@ -112,6 +112,7 @@ public class MyApplication extends Application {
 
     /**
      * 配置Imageloader
+     * 加载本地图片
      */
     private void initImageLoder() {
         File cacheDir = StorageUtils.getOwnCacheDirectory(getBaseContext(), "hyx/Cache");

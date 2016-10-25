@@ -15,6 +15,7 @@ import cn.xiaocool.hongyunschool.R;
 
 /**
  * Created by Administrator on 2016/8/11 0011.
+ * @ android自定义弹窗
  */
 public class SharePopupWindow extends PopupWindow {
     private Context mContext;

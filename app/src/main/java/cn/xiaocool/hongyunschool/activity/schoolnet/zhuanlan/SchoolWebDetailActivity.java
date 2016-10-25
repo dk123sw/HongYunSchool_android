@@ -25,6 +25,7 @@ import cn.xiaocool.hongyunschool.view.SharePopupWindow;
 /**
  * 校网->学校概况->学校简介
  * 学校信息教师信息 ，学生信息，活动信息
+ * @ 显示的是WebView
  */
 public class SchoolWebDetailActivity extends BaseActivity {
 
@@ -32,7 +33,7 @@ public class SchoolWebDetailActivity extends BaseActivity {
     WebView swdWebview;
     private WebListInfo webListInfo;
     SharePopupWindow takePhotoPopWin;
-    private   int flag=0;
+    private int flag=0;
     String url = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {

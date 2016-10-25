@@ -150,11 +150,11 @@ public class VolleyUtil {
 
 
     // 以下是在同一个类中定义的接口
-    public interface VolleyJsonCallback {
+public interface VolleyJsonCallback {
         void onSuccess(String result);
 
         void onError();
-    }
+}
 
 
 }

@@ -12,7 +12,7 @@
     <string name="main_four_name">我的</string>
 
     <!--网络状态-->
-    <string name="versionid">13</string>
+    <string name="versionid">15</string>
     <string name="net_error">网络连接失败</string>
 
     <string name="update_download_failed">下载失败</string>

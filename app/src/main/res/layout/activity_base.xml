@@ -9,6 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="@color/themeColor"/>
+
     <LinearLayout
         android:background="@color/themeColor"
         android:layout_width="match_parent"
@@ -38,11 +39,11 @@
             android:textSize="18sp"
             android:text="这是bar"
             android:gravity="center"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:ellipsize="end"
-            android:singleLine="true"/>
+            android:maxLines="1"/>
 
         <RelativeLayout
             android:id="@+id/top_right"

@@ -213,7 +213,8 @@ public class WebListActivity extends BaseActivity {
                         holder.getView(R.id.teacher_img).setVisibility(View.GONE);
                     } else {
                         holder.getView(R.id.teacher_img).setVisibility(View.VISIBLE);
-                        ImgLoadUtil.display(NetConstantUrl.WEB_IMAGE_URL + webListInfo.getThumb(), (ImageView) holder.getView(R.id.teacher_img));
+                        ImgLoadUtil.display(NetConstantUrl.WEB_IMAGE_URL + webListInfo.getThumb(),
+                                (ImageView) holder.getView(R.id.teacher_img));
                     }
                 }
 

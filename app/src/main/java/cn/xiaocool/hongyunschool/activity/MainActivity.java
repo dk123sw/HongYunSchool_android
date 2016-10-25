@@ -43,7 +43,6 @@ import cn.xiaocool.hongyunschool.utils.SPUtils;
 import cn.xiaocool.hongyunschool.view.NiceDialog;
 
 
-
 public class MainActivity extends BaseActivity implements ViewPager.OnPageChangeListener{
 
 
